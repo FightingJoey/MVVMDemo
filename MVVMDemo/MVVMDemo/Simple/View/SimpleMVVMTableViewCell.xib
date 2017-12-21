@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="SimpleMVVMTableViewCell" customModule="MVVMDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="106.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klj-iW-vEA">
+                        <rect key="frame" x="16" y="11" width="322" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-LO-jye">
+                        <rect key="frame" x="300" y="75" width="38" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnS-we-qXM">
+                        <rect key="frame" x="240" y="75" width="52" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="TWY-LO-jye" secondAttribute="trailing" id="3Zi-yC-QlZ"/>
+                    <constraint firstItem="Klj-iW-vEA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Fja-aL-KHP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Klj-iW-vEA" secondAttribute="trailing" id="O1x-lW-sH5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TWY-LO-jye" secondAttribute="bottom" id="UHm-2Y-ngy"/>
+                    <constraint firstItem="nnS-we-qXM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Klj-iW-vEA" secondAttribute="bottom" constant="5" id="ag5-nf-ojw"/>
+                    <constraint firstItem="TWY-LO-jye" firstAttribute="leading" secondItem="nnS-we-qXM" secondAttribute="trailing" constant="8" id="lKf-1e-oRs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nnS-we-qXM" secondAttribute="bottom" id="p7I-Qg-Ojs"/>
+                    <constraint firstItem="Klj-iW-vEA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vAr-1S-HlK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gankAuthor" destination="nnS-we-qXM" id="0h2-7N-pMv"/>
+                <outlet property="gankTime" destination="TWY-LO-jye" id="Y62-j5-Lbg"/>
+                <outlet property="gankTitle" destination="Klj-iW-vEA" id="MyW-5f-stn"/>
+            </connections>
+            <point key="canvasLocation" x="51" y="85.5"/>
+        </tableViewCell>
+    </objects>
+</document>
