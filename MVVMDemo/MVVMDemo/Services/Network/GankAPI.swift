@@ -106,19 +106,12 @@ class Provider<Target> where Target: Moya.TargetType {
          requestClosure: @escaping MoyaProvider<Target>.RequestClosure = MoyaProvider.defaultRequestMapping,
          stubClosure: @escaping MoyaProvider<Target>.StubClosure = MoyaProvider.neverStub,
          manager: Manager = MoyaProvider<Target>.defaultAlamofireManager(),
-         plugins: [PluginType] = [AccessTokenPlugin()],
+         plugins: [PluginType] = [NetworkLoggerPlugin()],
          trackInflights: Bool = false) {
         
         self.provider = MoyaProvider(endpointClosure: endpointClosure, requestClosure: requestClosure, stubClosure: stubClosure, manager: manager, plugins: plugins, trackInflights: trackInflights)
     }
     
-}
-
-internal final class AccessTokenPlugin: PluginType {
-    
-    func willSend(_ request: RequestType, target: TargetType) {
-        print(request.request!.allHTTPHeaderFields!)
-    }
 }
 
 // MARK: - Helpers
