@@ -96,7 +96,30 @@ extension GankAPI: TargetType {
     }
 }
 
-let gankApi = MoyaProvider<GankAPI>()
+let gankApi = Provider<GankAPI>()
+
+class Provider<Target> where Target: Moya.TargetType {
+    
+    let provider: MoyaProvider<Target>
+    
+    init(endpointClosure: @escaping MoyaProvider<Target>.EndpointClosure = MoyaProvider.defaultEndpointMapping,
+         requestClosure: @escaping MoyaProvider<Target>.RequestClosure = MoyaProvider.defaultRequestMapping,
+         stubClosure: @escaping MoyaProvider<Target>.StubClosure = MoyaProvider.neverStub,
+         manager: Manager = MoyaProvider<Target>.defaultAlamofireManager(),
+         plugins: [PluginType] = [AccessTokenPlugin()],
+         trackInflights: Bool = false) {
+        
+        self.provider = MoyaProvider(endpointClosure: endpointClosure, requestClosure: requestClosure, stubClosure: stubClosure, manager: manager, plugins: plugins, trackInflights: trackInflights)
+    }
+    
+}
+
+internal final class AccessTokenPlugin: PluginType {
+    
+    func willSend(_ request: RequestType, target: TargetType) {
+        print(request.request!.allHTTPHeaderFields!)
+    }
+}
 
 // MARK: - Helpers
 

@@ -13,6 +13,8 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("uuid: "+(UIDevice.current.identifierForVendor?.uuidString)!)
+        
     }
 
     // MARK: - Table view data source

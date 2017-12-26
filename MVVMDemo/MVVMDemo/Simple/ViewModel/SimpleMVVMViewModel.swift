@@ -38,7 +38,7 @@ class SimpleMVVMViewModel {
     }
     
     func getData() {
-        gankApi.request(GankAPI.data(type: GankType.mapCategory(with: 0), size: 20, index: 0)) { (result) in
+        gankApi.provider.request(GankAPI.data(type: GankType.mapCategory(with: 0), size: 20, index: 0)) { (result) in
             switch result {
             case let .success(moyaResponse):
                 do {

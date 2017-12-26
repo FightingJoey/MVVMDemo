@@ -11,7 +11,7 @@ import Foundation
 class DataController {
     var sections: Array<HomeSection> = []
     func getData(_ block: @escaping EmptyBlock) {
-        gankApi.request(GankAPI.data(type: GankType.mapCategory(with: 0), size: 20, index: 0)) { (result) in
+        gankApi.provider.request(GankAPI.data(type: GankType.mapCategory(with: 0), size: 20, index: 0)) { (result) in
             switch result {
             case let .success(moyaResponse):
                 do {
